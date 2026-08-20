@@ -1,0 +1,230 @@
+═══════════════════════════════════════════════════════════════════════════════
+  TUTORIAL: COMO COMPILAR O APK DO RAVEN ANDROID USANDO GITHUB (GRATUITO)
+═══════════════════════════════════════════════════════════════════════════════
+
+Este tutorial explica como compilar o aplicativo Android automaticamente usando
+o GitHub Actions, SEM precisar instalar Java, Android Studio ou outras 
+ferramentas no seu computador!
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PASSO 1: CRIAR CONTA NO GITHUB (se ainda não tiver)                        │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+1. Acesse: https://github.com
+2. Clique em "Sign up" (Cadastrar)
+3. Preencha seu email, senha e nome de usuário
+4. Confirme seu email
+5. Pronto! Conta criada (é gratuito)
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PASSO 2: INSTALAR GIT NO SEU COMPUTADOR                                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+1. Baixe o Git para Windows: https://git-scm.com/download/win
+2. Execute o instalador
+3. Durante a instalação, deixe todas as opções padrão
+4. Clique em "Next" até terminar
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PASSO 3: CRIAR REPOSITÓRIO NO GITHUB                                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+1. Faça login no GitHub: https://github.com
+2. Clique no botão "+" no canto superior direito
+3. Selecione "New repository" (Novo repositório)
+4. Preencha os campos:
+   - Repository name: RavenAndroid
+   - Description: Aplicativo de notificações Raven
+   - Deixe PRIVATE marcado (para manter privado)
+   - NÃO marque "Add a README file"
+5. Clique em "Create repository"
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PASSO 4: ENVIAR O CÓDIGO PARA O GITHUB                                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+1. Abra o Prompt de Comando (CMD) ou PowerShell
+
+2. Navegue até a pasta do projeto:
+   cd "c:\Users\USER DO TUTU\Downloads\RavenAndroid (1)aaaaaaaa"
+
+3. Configure seu nome e email (apenas na primeira vez):
+   git config --global user.name "Seu Nome"
+   git config --global user.email "seu-email@example.com"
+
+4. Inicialize o repositório Git:
+   git init
+
+5. Adicione todos os arquivos:
+   git add .
+
+6. Faça o primeiro commit:
+   git commit -m "Primeiro commit - App Raven Android"
+
+7. Conecte ao seu repositório do GitHub:
+   (substitua SEU-USUARIO pelo seu nome de usuário do GitHub)
+   
+   git remote add origin https://github.com/SEU-USUARIO/RavenAndroid.git
+
+8. Envie o código para o GitHub:
+   git branch -M main
+   git push -u origin main
+
+9. Digite seu nome de usuário do GitHub quando solicitado
+10. Digite sua senha (ou Personal Access Token - veja nota abaixo)
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ NOTA IMPORTANTE: PERSONAL ACCESS TOKEN                                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+O GitHub pode pedir um "Personal Access Token" em vez de senha:
+
+1. Vá em: https://github.com/settings/tokens
+2. Clique em "Generate new token" → "Generate new token (classic)"
+3. Em "Note" escreva: "RavenAndroid"
+4. Marque a opção "repo" (todas as sub-opções serão marcadas)
+5. Role até o fim e clique em "Generate token"
+6. COPIE O TOKEN GERADO (você só verá uma vez!)
+7. Use este token como senha quando o Git pedir
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PASSO 5: AGUARDAR A COMPILAÇÃO AUTOMÁTICA                                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+1. Acesse seu repositório no GitHub:
+   https://github.com/SEU-USUARIO/RavenAndroid
+
+2. Clique na aba "Actions" (Ações)
+
+3. Você verá um workflow chamado "Build APK" sendo executado
+   - Ícone amarelo = Em execução
+   - Ícone verde = Compilado com sucesso!
+   - Ícone vermelho = Erro (veja os logs para detalhes)
+
+4. A compilação leva de 3 a 5 minutos
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PASSO 6: BAIXAR O APK COMPILADO                                            │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+1. Após a compilação terminar (ícone verde), clique no workflow concluído
+
+2. Role a página até a seção "Artifacts" (Artefatos)
+
+3. Clique em "app-debug" para baixar o APK
+
+4. Um arquivo ZIP será baixado
+
+5. Extraia o arquivo ZIP
+
+6. Dentro estará o arquivo: app-debug.apk
+
+7. Pronto! Este é o seu aplicativo compilado!
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PASSO 7: INSTALAR O APK NO SEU CELULAR ANDROID                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+1. Transfira o arquivo app-debug.apk para seu celular Android
+   (pode usar cabo USB, Google Drive, WhatsApp, etc.)
+
+2. No celular, abra o arquivo APK
+
+3. O Android pode pedir para "Permitir instalação de fontes desconhecidas"
+   - Vá em Configurações → Segurança
+   - Ative "Fontes desconhecidas" ou "Instalar apps desconhecidos"
+
+4. Instale o aplicativo
+
+5. Pronto! O app está instalado e pronto para usar!
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ DICAS EXTRAS                                                                │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+✓ COMPILAR NOVAMENTE:
+  Se você fizer alterações no código e quiser compilar novamente:
+  
+  1. Abra o CMD/PowerShell na pasta do projeto
+  2. Execute:
+     git add .
+     git commit -m "Descrição das mudanças"
+     git push
+  
+  3. O GitHub Actions vai compilar automaticamente!
+
+
+✓ COMPILAÇÃO MANUAL:
+  Você também pode acionar a compilação manualmente:
+  
+  1. Vá em: https://github.com/SEU-USUARIO/RavenAndroid/actions
+  2. Clique em "Build APK" na lista à esquerda
+  3. Clique no botão "Run workflow" à direita
+  4. Selecione "main" e clique em "Run workflow"
+
+
+✓ MANTER PRIVADO:
+  Como o repositório está privado, só você consegue ver o código e baixar
+  os APKs compilados. Ninguém mais terá acesso.
+
+
+✓ VALIDADE DOS ARTIFACTS:
+  Os arquivos APK compilados ficam disponíveis por 90 dias no GitHub.
+  Depois disso, você precisará compilar novamente ou baixar antes.
+
+
+✓ LIMITE GRATUITO:
+  O GitHub Actions é gratuito para repositórios privados com limite de
+  2.000 minutos por mês. Cada compilação usa cerca de 3-5 minutos, então
+  você pode compilar centenas de vezes por mês de graça!
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ SOLUÇÃO DE PROBLEMAS                                                        │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+❌ ERRO: "git não é reconhecido como comando"
+   → Instale o Git (Passo 2) e reinicie o CMD/PowerShell
+
+❌ ERRO: "fatal: not a git repository"
+   → Você não está na pasta correta. Use o comando cd para ir até a pasta
+
+❌ ERRO: "Authentication failed"
+   → Use um Personal Access Token em vez da senha (veja nota acima)
+
+❌ COMPILAÇÃO FALHOU (ícone vermelho)
+   → Clique no workflow e veja os logs para identificar o erro
+   → Pode ser problema no código ou configuração
+
+❌ NÃO CONSIGO INSTALAR O APK NO CELULAR
+   → Ative "Fontes desconhecidas" nas configurações de segurança
+   → Alguns celulares chamam de "Instalar apps desconhecidos"
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ LINKS ÚTEIS                                                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+• GitHub: https://github.com
+• Git para Windows: https://git-scm.com/download/win
+• Tokens do GitHub: https://github.com/settings/tokens
+• Documentação GitHub Actions: https://docs.github.com/actions
+
+
+═══════════════════════════════════════════════════════════════════════════════
+                              FIM DO TUTORIAL
+═══════════════════════════════════════════════════════════════════════════════
+
+Se tiver dúvidas ou problemas, verifique os logs do GitHub Actions para
+identificar possíveis erros na compilação.
+
+Boa sorte! 🚀
